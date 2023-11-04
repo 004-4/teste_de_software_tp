@@ -32,4 +32,4 @@ jobs:
         mkdir build
         cd build
     - name: Run Tests
-      run: .\testes_tp.exe  # Replace with the actual test executable name
+      run: tp/Makefile  
