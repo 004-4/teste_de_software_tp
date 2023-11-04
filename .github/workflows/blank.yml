@@ -1,0 +1,35 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Automatizando_meus_testes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        qt-version: '6.5.3'
+        host: 'windows'     
+    
+    - name: Set up MinGW environment
+      run: |
+          echo "QMAKE_CXX = C:\Qt\6.5.3\mingw_64\bin\qmake.exe" >> .env
+      env:
+          QMAKE_CXX: C:\Qt\6.5.3\mingw_64\bin\qmake.exe
+
+    - name: Configure and Build
+      run: |
+        mkdir build
+        cd build
+    - name: Run Tests
+      run: .\testes_tp.exe  # Replace with the actual test executable name
