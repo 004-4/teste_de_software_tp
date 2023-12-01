@@ -34,10 +34,10 @@ jobs:
     - name: Run Tests
       run: tp/Makefile  
 
-    - name: Install lcov
+    - name: Install lcov on WSL
       run: |
-        choco install lcov
-      shell: powershell
+        wsl sudo apt-get update
+        wsl sudo apt-get install lcov
 
     - name: Generate coverage
       run: |
