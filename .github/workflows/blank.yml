@@ -32,7 +32,7 @@ jobs:
         mkdir build
         cd build
     - name: Run Tests
-      run: tp/Makefile  
+      run: tp/testes_tp.pro  
       
     - name: Install lcov
       run: |
@@ -44,7 +44,4 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         
-    - name: Debug - Display contents of coverage report
-      run: |
-        cat build/coverage.info
-
+   
