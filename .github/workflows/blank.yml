@@ -38,11 +38,6 @@ jobs:
       run: |
         choco install lcov
       shell: powershell
-    
-    - name: Generate coverage
-      run: |
-        lcov --capture --directory . --output-file coverage.info --no-external
-      shell: powershell
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
