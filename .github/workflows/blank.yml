@@ -38,12 +38,7 @@ jobs:
       run: |
         choco install lcov
       shell: powershell
-      
-    - name: Install lcov on WSL
-      run: |
-        wsl sudo apt-get update
-        wsl sudo apt-get install lcov
-
+    
     - name: Generate coverage
       run: |
         lcov --capture --directory . --output-file coverage.info --no-external
