@@ -43,6 +43,6 @@ jobs:
       uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./coverage.txt
+        file: ./tp/coverage.txt
         name: codecov-umbrella
 
