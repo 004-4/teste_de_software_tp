@@ -33,7 +33,12 @@ jobs:
         cd build
     - name: Run Tests
       run: tp/Makefile  
-
+      
+    - name: Install lcov
+      run: |
+        choco install lcov
+      shell: powershell
+      
     - name: Install lcov on WSL
       run: |
         wsl sudo apt-get update
