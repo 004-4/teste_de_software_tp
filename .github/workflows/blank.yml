@@ -33,3 +33,18 @@ jobs:
         cd build
     - name: Run Tests
       run: tp/Makefile  
+
+    - name: Install lcov
+      run: |
+        choco install lcov
+      shell: powershell
+
+    - name: Generate coverage
+      run: |
+        lcov --capture --directory . --output-file coverage.info --no-external
+      shell: powershell
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
