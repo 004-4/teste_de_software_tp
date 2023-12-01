@@ -43,5 +43,8 @@ jobs:
       uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        name: codecov-umbrella
+        
+    - name: Debug - Display contents of coverage report
+      run: |
+        cat build/coverage.info
 
