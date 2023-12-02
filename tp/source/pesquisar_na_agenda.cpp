@@ -57,6 +57,7 @@ void pesquisar_na_agenda::on_excluircontato_clicked()
         query.prepare("DELETE FROM agenda WHERE ID = "+QString::number(id));
         if (query.exec()){
             QMessageBox::information(this, "", "Contato excluido com sucesso!", "Okay!");
+            result = true;
         }
         else{
             QMessageBox::warning(this, "ERRO", "Erro ao excluir o contato!", "Okay!");
@@ -125,3 +126,6 @@ void pesquisar_na_agenda::on_limparbusca_clicked()
     ui->barradepesquisa->setFocus();
 }
 
+bool pesquisar_na_agenda::get_excluir_query_result() const{
+    return result;
+}

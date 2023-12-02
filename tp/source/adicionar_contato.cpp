@@ -31,6 +31,7 @@ void adicionar_contato::on_adicionar_clicked()
         ui->email->clear();
         ui->categoria->clear();
         ui->nome->setFocus();
+        result = true;
     }
     else{
         qDebug()<< "Erro ao inserir contato";
@@ -42,4 +43,8 @@ void adicionar_contato::on_adicionar_clicked()
 void adicionar_contato::on_cancelar_clicked()
 {
     close();
+}
+
+bool adicionar_contato::get_adicionar_query_result() const{
+    return result;
 }

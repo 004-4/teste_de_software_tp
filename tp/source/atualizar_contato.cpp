@@ -47,6 +47,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Nome = '"+nome+"', [Celular/Telefone] = '"+celular+"', [E-mail] = '"+email+"', Categoria = '"+cat+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -57,6 +58,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET [Celular/Telefone] = '"+celular+"', [E-mail] = '"+email+"', Categoria = '"+cat+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -67,6 +69,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Nome = '"+nome+"', [E-mail] = '"+email+"', Categoria = '"+cat+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -77,6 +80,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Nome = '"+nome+"', [Celular/Telefone] = '"+celular+"', Categoria = '"+cat+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -87,6 +91,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Nome = '"+nome+"', [Celular/Telefone] = '"+celular+"', [E-mail] = '"+email+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -97,6 +102,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET [E-mail] = '"+email+"', Categoria = '"+cat+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -117,6 +123,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET [Celular/Telefone] = '"+celular+"', [E-mail] = '"+email+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -127,6 +134,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Nome = '"+nome+"', Categoria = '"+cat+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -137,6 +145,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Nome = '"+nome+"', [E-mail] = '"+email+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -147,6 +156,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Nome = '"+nome+"', [Celular/Telefone] = '"+celular+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -157,6 +167,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Categoria = '"+cat+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -167,6 +178,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET [E-mail] = '"+email+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -177,6 +189,7 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET [Celular/Telefone] = '"+celular+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
@@ -187,10 +200,15 @@ void atualizar_contato::on_atualizar_clicked()
         QSqlQuery query;
         query.prepare("UPDATE agenda SET Nome = '"+nome+"' WHERE ID ="+QString::number(id));
         if (query.exec()){
+            result = true;
             close();
         }
         else{
             QMessageBox::warning(this, "ERRO", "Erro ao atualizar o contato!");
         }
     }
+}
+
+bool atualizar_contato::get_atualizar_query_result() const{
+    return result;
 }

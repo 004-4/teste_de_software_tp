@@ -20,6 +20,9 @@ public:
     explicit pesquisar_na_agenda(QWidget *parent = nullptr);
     ~pesquisar_na_agenda();
 
+    bool get_excluir_query_result() const;
+
+
 private slots:
 
     void on_excluircontato_clicked();
@@ -34,6 +37,7 @@ private slots:
 
 private:
     Ui::pesquisar_na_agenda *ui;
+    bool result;
 };
 
 #endif // PESQUISAR_NA_AGENDA_H

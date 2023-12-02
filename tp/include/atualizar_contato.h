@@ -18,6 +18,9 @@ public:
     explicit atualizar_contato(QWidget *parent = nullptr, int ID = 0);
     ~atualizar_contato();
 
+    bool get_atualizar_query_result() const;
+
+
 private slots:
     void on_atualizar_clicked();
 
@@ -25,6 +28,7 @@ private slots:
 
 private:
     Ui::atualizar_contato *ui;
+    bool result;
 };
 
 #endif // ATUALIZAR_CONTATO_H

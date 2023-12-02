@@ -18,6 +18,8 @@ public:
     explicit adicionar_contato(QWidget *parent = nullptr);
     ~adicionar_contato();
 
+    bool get_adicionar_query_result() const;
+
 private slots:
 
     void on_adicionar_clicked();
@@ -26,6 +28,7 @@ private slots:
 
 private:
     Ui::adicionar_contato *ui;
+    bool result;
 };
 
 #endif // ADICIONAR_CONTATO_H

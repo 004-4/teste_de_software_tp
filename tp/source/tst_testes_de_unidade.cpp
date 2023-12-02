@@ -3,6 +3,8 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTableWidget>
+#include <QWidget>
+#include <QMessageBox>
 
 #include "adicionar_contato.h"
 #include "atualizar_contato.h"
@@ -27,6 +29,7 @@ public:
 
 private slots:
 
+//    Parte 1
 //    pagina de login
 
     void test_usuario_de_login();
@@ -94,12 +97,24 @@ private slots:
     void test_atualizar_to_pesquisar_na_agenda_button();
     void test_cancelaratc_to_pesquisar_na_agenda_button();
 
-//   pagina de ver perfil do usuário
+//    pagina de ver perfil do usuário
 
     void test_voltar_to_pagina_principal_button();
     void test_usuario_correto();
     void test_senha_correta();
     void test_nome_tabela_no_banco_de_dados_correto();
+
+//    Parte 2
+//    testes de integração
+
+    void test_adicionarcontato();
+    void test_atualizarcontato();
+    void test_excluircontato();
+    void test_pesquisarcontato();
+
+//    teste de sistema pequeno
+
+    void test_adicionar_e_pesquisar();
 
 };
 
@@ -816,6 +831,165 @@ void testes_de_unidade::test_nome_tabela_no_banco_de_dados_correto(){
 
     QCOMPARE(nometabela, nome_esperado);
 
+}
+
+
+void testes_de_unidade::test_adicionarcontato(){
+    int argc = 0;
+    QApplication app(argc, nullptr);
+
+    login Login;
+    adicionar_contato AddC;
+
+    AddC.show();
+
+    QLineEdit* nome = AddC.findChild<QLineEdit*>("nome");
+    QTest::keyClicks(nome, "Charlotte");
+
+    QLineEdit* celular = AddC.findChild<QLineEdit*>("celular");
+    QTest::keyClicks(celular, "31898622766");
+
+    QLineEdit* email = AddC.findChild<QLineEdit*>("email");
+    QTest::keyClicks(email, "char@gmail.com");
+
+    QLineEdit* cat = AddC.findChild<QLineEdit*>("categoria");
+    QTest::keyClicks(cat, "Amigos");
+
+    QTest::mouseClick(AddC.findChild<QPushButton*>("adicionar"), Qt::LeftButton);
+
+
+    QCOMPARE(AddC.get_adicionar_query_result(), true);
+
+}
+void testes_de_unidade::test_atualizarcontato(){
+
+    int argc = 0;
+    QApplication app(argc, nullptr);
+
+    login Login;
+
+    QWidget parentWidget;
+    atualizar_contato AtC(&parentWidget, 10);
+
+    AtC.show();
+
+    QLineEdit* nome = AtC.findChild<QLineEdit*>("nome");
+    QTest::keyClicks(nome, "Joana");
+
+    QLineEdit* celular = AtC.findChild<QLineEdit*>("celular");
+    celular->setText("31998555766");
+
+    QLineEdit* email = AtC.findChild<QLineEdit*>("email");
+    email->setText("juju@exemplo.com");
+
+    QLineEdit* cat = AtC.findChild<QLineEdit*>("categoria");
+    cat->setText("Amigos");
+
+    QTest::mouseClick(AtC.findChild<QPushButton*>("atualizar"), Qt::LeftButton);
+
+
+    QCOMPARE(AtC.get_atualizar_query_result(), true);
+}
+void testes_de_unidade::test_excluircontato(){
+    int argc = 0;
+    QApplication app(argc, nullptr);
+
+    login Login;
+    pesquisar_na_agenda PA;
+
+    QTableWidget* table = PA.findChild<QTableWidget*>("agendacontatos");
+
+    QTableWidgetItem* click = table->item(10, 0);  // Assuming you want to click on the first column
+
+    QRect itemRect = table->visualItemRect(click);
+    QTest::mouseClick(table->viewport(), Qt::LeftButton, Qt::NoModifier, itemRect.center());
+
+    QTest::mouseClick(PA.findChild<QPushButton*>("excluircontato"), Qt::LeftButton);
+
+    QTest::keyClick(&PA, Qt::Key_Y);
+    QCOMPARE(PA.get_excluir_query_result(), true);
+
+}
+void testes_de_unidade::test_pesquisarcontato(){
+    int argc = 0;
+    QApplication app(argc, nullptr);
+
+    login Login;
+    pesquisar_na_agenda PA;
+
+    QTableWidget* table = PA.findChild<QTableWidget*>("agendacontatos");
+
+    QLineEdit* barra = PA.findChild<QLineEdit*>("barradepesquisa");
+    QTest::keyClicks(barra, "Mariana");
+
+    QTest::mouseClick(PA.findChild<QPushButton*>("pesquisar"), Qt::LeftButton);
+
+    int numlinhas = table->rowCount();
+
+    for (int i = 0; i < numlinhas; ++i) {
+        QString linha = table->item(i, 1)->text();
+        QVERIFY(linha.contains("Mariana", Qt::CaseInsensitive));
+    }
+}
+
+void testes_de_unidade::test_adicionar_e_pesquisar(){
+    int argc = 0;
+    QApplication app(argc, nullptr);
+
+    login Login;
+    adicionar_contato AddC;
+    pesquisar_na_agenda PA;
+
+    QLineEdit* usuario = Login.findChild<QLineEdit*>("usuario");
+    QTest::keyClicks(usuario, "claraboia");
+    QString usuario_digitado = usuario->text();
+
+    QLineEdit* senha = Login.findChild<QLineEdit*>("senha");
+    QTest::keyClicks(senha, "bolinho86");
+    QString senha_digitada = senha->text();
+
+
+    QLineEdit* nome = AddC.findChild<QLineEdit*>("nome");
+    QTest::keyClicks(nome, "Elisa");
+
+    QLineEdit* celular = AddC.findChild<QLineEdit*>("celular");
+    QTest::keyClicks(celular, "318982922766");
+
+    QLineEdit* email = AddC.findChild<QLineEdit*>("email");
+    QTest::keyClicks(email, "lisa@gmail.com");
+
+    QLineEdit* cat = AddC.findChild<QLineEdit*>("categoria");
+    QTest::keyClicks(cat, "Amigos");
+
+    QTest::mouseClick(AddC.findChild<QPushButton*>("adicionar"), Qt::LeftButton);
+
+
+    QTableWidget* table = PA.findChild<QTableWidget*>("agendacontatos");
+
+    QLineEdit* barra = PA.findChild<QLineEdit*>("barradepesquisa");
+    QTest::keyClicks(barra, "lisa@gmail");
+
+    QTest::mouseClick(PA.findChild<QPushButton*>("pesquisar"), Qt::LeftButton);
+    int numlinhas = table->rowCount();
+
+
+    QCOMPARE(usuario_digitado, "claraboia");
+    QCOMPARE(senha_digitada, "bolinho86");
+    QCOMPARE(AddC.get_adicionar_query_result(), true);
+
+    for (int i = 0; i < numlinhas; ++i) {
+        QString linha1 = table->item(i, 1)->text();
+        QVERIFY(linha1.contains("Elisa", Qt::CaseInsensitive));
+
+        QString linha2 = table->item(i, 2)->text();
+        QVERIFY(linha2.contains("318982922766", Qt::CaseInsensitive));
+
+        QString linha3 = table->item(i, 3)->text();
+        QVERIFY(linha3.contains("lisa@gmail.com", Qt::CaseInsensitive));
+
+        QString linha4 = table->item(i, 4)->text();
+        QVERIFY(linha4.contains("Amigos", Qt::CaseInsensitive));
+    }
 }
 
 QTEST_APPLESS_MAIN(testes_de_unidade)
