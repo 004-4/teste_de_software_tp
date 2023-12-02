@@ -27,13 +27,9 @@ jobs:
       env:
           QMAKE_CXX: C:\Qt\6.5.3\mingw_64\bin\qmake.exe
 
-    - name: Configure and Build
-      run: |
-        mkdir build
-        cd build
     - name: Run Tests
       run: |
-        cd build
+        cd tp
         make
       
     - name: Install lcov
