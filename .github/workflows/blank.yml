@@ -20,6 +20,11 @@ jobs:
       with:
         qt-version: '6.6.0'
         host: 'windows'     
+        
+    - name: Set up MinGW environment
+      run: |
+        choco install mingw
+
     
     - name: Run Tests
       run: |
