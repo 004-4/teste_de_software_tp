@@ -18,14 +18,14 @@ jobs:
     - name: Install Qt
       uses: jurplel/install-qt-action@v3
       with:
-        qt-version: '6.5.3'
+        qt-version: '6.6.0'
         host: 'windows'     
     
     - name: Set up MinGW environment
       run: |
-          echo "QMAKE_CXX = C:\Qt\6.5.3\mingw_64\bin\qmake.exe" >> .env
+          echo "QMAKE_CXX = C:\Qt\6.6.0\mingw_64\bin\qmake.exe" >> .env
       env:
-          QMAKE_CXX: C:\Qt\6.5.3\mingw_64\bin\qmake.exe
+          QMAKE_CXX: C:\Qt\6.6.0\mingw_64\bin\qmake.exe
 
     - name: Run Tests
       run: |
