@@ -32,7 +32,9 @@ jobs:
         mkdir build
         cd build
     - name: Run Tests
-      run: tp/testes_tp.pro  
+      run: |
+        cd build
+        make check
       
     - name: Install lcov
       run: |
