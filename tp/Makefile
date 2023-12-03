@@ -234,7 +234,7 @@ Makefile: tp/testes_tp.pro tp/mingw_64_/mkspecs/win32-g++/qmake.conf tp/mingw_64
 		tp/mingw_64_/lib/Qt6Sql.prl \
 		tp/mingw_64_/lib/Qt6Core.prl \
 		tp/mingw_64_/features/build_pass.prf
-	$(QMAKE) -o Makefile tp/testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	$(QMAKE) -o Makefile tp\testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 tp/mingw_64_/features/spec_pre.prf:
 tp/mingw_64_/features/device_config.prf:
 tp/mingw_64_/common/sanitize.conf:
@@ -400,7 +400,7 @@ tp/mingw_64_/lib/Qt6Sql.prl:
 tp/mingw_64_/lib/Qt6Core.prl:
 tp/mingw_64_/features/build_pass.prf:
 qmake: FORCE
-	@$(QMAKE) -o Makefile tp/testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	@$(QMAKE) -o Makefile tp\testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
 qmake_all: FORCE
 
