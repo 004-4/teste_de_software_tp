@@ -26,10 +26,10 @@ jobs:
         choco install mingw
 
     
-    - name: Run Tests
+    - name: Build Project
       run: |
-        cd tp
-        make
+        qmake -o Makefile testes_tp.pro
+        mingw64_make
       
     - name: Install lcov
       run: |
