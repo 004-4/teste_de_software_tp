@@ -8,7 +8,7 @@ login::login(QWidget *parent)
     ui->setupUi(this);
 
     QSqlDatabase BD = QSqlDatabase::addDatabase("QSQLITE");
-    BD.setDatabaseName("C:/Users/USER/Documents/UFMG/6º/teste/tp1_3/agendadecontatos");
+    BD.setDatabaseName("tp/data/agendadecontatos");
         if (!BD.open()){
         QMessageBox::warning(this, "Banco de Dados não foi aberto, favor reabrir o aplicativo", ":(");
             close();
