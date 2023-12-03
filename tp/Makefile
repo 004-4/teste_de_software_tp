@@ -68,7 +68,7 @@ release-install: FORCE
 release-uninstall: FORCE
 	$(MAKE) -f $(MAKEFILE).Release uninstall
 
-Makefile: ./tp/testes_tp.pro C:/Qt/6.6.0/mingw_64/mkspecs/win32-g++/qmake.conf C:/Qt/6.6.0/mingw_64/mkspecs/features/spec_pre.prf \
+Makefile: tp/testes_tp.pro C:/Qt/6.6.0/mingw_64/mkspecs/win32-g++/qmake.conf C:/Qt/6.6.0/mingw_64/mkspecs/features/spec_pre.prf \
 		C:/Qt/6.6.0/mingw_64/mkspecs/features/device_config.prf \
 		C:/Qt/6.6.0/mingw_64/mkspecs/common/sanitize.conf \
 		C:/Qt/6.6.0/mingw_64/mkspecs/common/gcc-base.conf \
@@ -398,7 +398,7 @@ C:/Qt/6.6.0/mingw_64/lib/Qt6Sql.prl:
 C:/Qt/6.6.0/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.6.0/mingw_64/mkspecs/features/build_pass.prf:
 qmake: FORCE
-	@$(QMAKE) -o Makefile ..\testes_tp\testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	@$(QMAKE) -o Makefile tp/testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
 qmake_all: FORCE
 
