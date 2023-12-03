@@ -37,38 +37,8 @@ RES_FILE      =
 SED           = $(QMAKE) -install sed
 MOVE          = move
 SUBTARGETS    =  \
-		debug \
-		release
+		
 
-
-debug: FORCE
-	$(MAKE) -f $(MAKEFILE).Debug
-debug-make_first: FORCE
-	$(MAKE) -f $(MAKEFILE).Debug 
-debug-all: FORCE
-	$(MAKE) -f $(MAKEFILE).Debug all
-debug-clean: FORCE
-	$(MAKE) -f $(MAKEFILE).Debug clean
-debug-distclean: FORCE
-	$(MAKE) -f $(MAKEFILE).Debug distclean
-debug-install: FORCE
-	$(MAKE) -f $(MAKEFILE).Debug install
-debug-uninstall: FORCE
-	$(MAKE) -f $(MAKEFILE).Debug uninstall
-release: FORCE
-	$(MAKE) -f $(MAKEFILE).Release
-release-make_first: FORCE
-	$(MAKE) -f $(MAKEFILE).Release 
-release-all: FORCE
-	$(MAKE) -f $(MAKEFILE).Release all
-release-clean: FORCE
-	$(MAKE) -f $(MAKEFILE).Release clean
-release-distclean: FORCE
-	$(MAKE) -f $(MAKEFILE).Release distclean
-release-install: FORCE
-	$(MAKE) -f $(MAKEFILE).Release install
-release-uninstall: FORCE
-	$(MAKE) -f $(MAKEFILE).Release uninstall
 
 Makefile: testes_tp.pro mingw_64_/mkspecs/win32-g++/qmake.conf mingw_64_/features/spec_pre.prf \
 		mingw_64_/features/device_config.prf \
@@ -404,37 +374,7 @@ qmake: FORCE
 
 qmake_all: FORCE
 
-make_first: debug-make_first release-make_first  FORCE
-all: debug-all release-all  FORCE
-clean: debug-clean release-clean  FORCE
-distclean: debug-distclean release-distclean  FORCE
-	-$(DEL_FILE) Makefile
-	-$(DEL_FILE) C:\Users\USER\Documents\UFMG\6º\teste\build-testes_tp-Desktop_Qt_6_6_0_MinGW_64_bit-Debug\target_wrapper.bat .qmake.stash
-
-debug-check:
-	$(MAKE) -f $(MAKEFILE).Debug check
-release-check:
-	$(MAKE) -f $(MAKEFILE).Release check
-check_all: debug-check release-check
-
-check: debug-check
-
-debug-mocclean:
-	$(MAKE) -f $(MAKEFILE).Debug mocclean
-release-mocclean:
-	$(MAKE) -f $(MAKEFILE).Release mocclean
-mocclean: debug-mocclean release-mocclean
-
-debug-mocables:
-	$(MAKE) -f $(MAKEFILE).Debug mocables
-release-mocables:
-	$(MAKE) -f $(MAKEFILE).Release mocables
-mocables: debug-mocables release-mocables
-
 benchmark: first
 FORCE:
 
 .SUFFIXES:
-
-$(MAKEFILE).Debug: Makefile
-$(MAKEFILE).Release: Makefile
