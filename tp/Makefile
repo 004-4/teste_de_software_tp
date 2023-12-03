@@ -68,7 +68,7 @@ release-install: FORCE
 release-uninstall: FORCE
 	$(MAKE) -f $(MAKEFILE).Release uninstall
 
-Makefile: ../testes_tp/testes_tp.pro C:/Qt/6.6.0/mingw_64/mkspecs/win32-g++/qmake.conf C:/Qt/6.6.0/mingw_64/mkspecs/features/spec_pre.prf \
+Makefile: tp/testes_tp.pro C:/Qt/6.6.0/mingw_64/mkspecs/win32-g++/qmake.conf C:/Qt/6.6.0/mingw_64/mkspecs/features/spec_pre.prf \
 		C:/Qt/6.6.0/mingw_64/mkspecs/features/device_config.prf \
 		C:/Qt/6.6.0/mingw_64/mkspecs/common/sanitize.conf \
 		C:/Qt/6.6.0/mingw_64/mkspecs/common/gcc-base.conf \
