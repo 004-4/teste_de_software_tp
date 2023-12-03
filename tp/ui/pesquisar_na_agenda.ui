@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>pesquisar_na_agenda</class>
+ <widget class="QDialog" name="pesquisar_na_agenda">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>938</width>
+    <height>518</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:reflect, x1:0.437, y1:0.556818, x2:1, y2:1, stop:0.147727 rgba(255, 143, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>891</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="topMargin">
+     <number>7</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FF930A;
+size: 20pt;
+color: #FFFFFF;
+font-family: 'Courier New';</string>
+        </property>
+        <property name="text">
+         <string>Pesquisar Nome:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="barradepesquisa">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FFF solid</string>
+        </property>
+        <property name="placeholderText">
+         <string>Digite um nome, um celular, um e-mail ou uma categoria...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pesquisar">
+        <property name="styleSheet">
+         <string notr="true">background-color: #884ab2;
+size: 17pt;
+color: #FFFFFF;
+font-family: 'Courier New';
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+</string>
+        </property>
+        <property name="text">
+         <string>Pesquisar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="limparbusca">
+        <property name="styleSheet">
+         <string notr="true">background-color: #884ab2;
+size: 17pt;
+color: #FFFFFF;
+font-family: 'Courier New';
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+</string>
+        </property>
+        <property name="text">
+         <string>Limpar busca</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="agendacontatos">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="atualizarcontato">
+        <property name="styleSheet">
+         <string notr="true">background: #471ca8;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-family: 'Courier New';
+color: #FFF;
+font-size: 18pt;</string>
+        </property>
+        <property name="text">
+         <string>Atualizar contato</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="excluircontato">
+        <property name="styleSheet">
+         <string notr="true">background: #d1105a;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-family: 'Courier New';
+color: #FFF;
+font-size: 18pt;</string>
+        </property>
+        <property name="text">
+         <string>Excluir contato</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="voltar">
+        <property name="styleSheet">
+         <string notr="true">background: #d1105a;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-family: 'Courier New';
+color: #FFF;
+font-size: 18pt;</string>
+        </property>
+        <property name="text">
+         <string>Voltar</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

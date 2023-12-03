@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>cadastrar</class>
+ <widget class="QDialog" name="cadastrar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>474</width>
+    <height>271</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0.988636, x2:0, y2:0.028, stop:0 rgba(242, 75, 4, 255), stop:0.477273 rgba(71, 28, 168, 255), stop:0.681818 rgba(136, 74, 184, 255), stop:0.971591 rgba(209, 16, 90, 255));
+font-family: 'Courier New';
+color: #FFF</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>431</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">box-sizing: border-box;
+
+background:  #d1105a;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);</string>
+        </property>
+        <property name="text">
+         <string>Usuário</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="usuario">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FFF;
+border: 1px solid #FFF;
+color:#000</string>
+        </property>
+        <property name="placeholderText">
+         <string>Digite o nome de usuário desejado</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">box-sizing: border-box;
+
+background:  #ff930a;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);</string>
+        </property>
+        <property name="text">
+         <string>Senha</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="senha">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FFF;
+border: 1px solid #FFF;
+color:#000</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Crie uma senha</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="styleSheet">
+         <string notr="true">box-sizing: border-box;
+
+background:  #f24b04;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);</string>
+        </property>
+        <property name="text">
+         <string>Confirmar senha</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="senhaconfirma">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FFF;
+border: 1px solid #FFF;
+color:#000</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Repita a senha anterior</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QPushButton" name="cadastrarusuario">
+        <property name="styleSheet">
+         <string notr="true">box-sizing: border-box;
+
+background:  #884ab2;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);</string>
+        </property>
+        <property name="text">
+         <string>Cadastrar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="cancelar">
+        <property name="styleSheet">
+         <string notr="true">box-sizing: border-box;
+
+background:  #884ab2;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);</string>
+        </property>
+        <property name="text">
+         <string>Cancelar</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
