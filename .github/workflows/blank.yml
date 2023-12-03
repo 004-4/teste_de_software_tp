@@ -29,8 +29,7 @@ jobs:
     - name: Build Project
       run: |
         cd tp
-        qmake -o Makefile tp/testes_tp.pro
-        make
+        make Makefile 
       
     - name: Install lcov
       run: |
