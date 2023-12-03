@@ -13,7 +13,7 @@ EQ            = =
 first: debug
 install: debug-install
 uninstall: debug-uninstall
-QMAKE         = qmake
+QMAKE         = qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
 MKDIR         = mkdir
