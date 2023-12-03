@@ -13,7 +13,7 @@ EQ            = =
 first: debug
 install: debug-install
 uninstall: debug-uninstall
-QMAKE         = tp/qmake.exe
+QMAKE         = tp\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
 MKDIR         = mkdir
@@ -23,8 +23,8 @@ COPY_DIR      = xcopy /s /q /y /i
 INSTALL_FILE  = copy /y
 INSTALL_PROGRAM = copy /y
 INSTALL_DIR   = xcopy /s /q /y /i
-QINSTALL      = tp/qmake.exe -install qinstall
-QINSTALL_PROGRAM = tp/qmake.exe -install qinstall -exe
+QINSTALL      = tp\qmake.exe -install qinstall
+QINSTALL_PROGRAM = tp\qmake.exe -install qinstall -exe
 DEL_FILE      = del
 SYMLINK       = $(QMAKE) -install ln -f -s
 DEL_DIR       = rmdir
