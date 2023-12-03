@@ -30,7 +30,7 @@ jobs:
       run: |
         cd tp
         ..\tp\qmake.exe ..\tp\testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
-        mingw32-make
+        make
       
     - name: Install lcov
       run: |
