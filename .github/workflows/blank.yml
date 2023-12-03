@@ -23,13 +23,14 @@ jobs:
         
     - name: Set up MinGW environment
       run: |
-        choco install mingw
-
+        cd tp
+        choco install mingw -y
+        refreshenv
     
     - name: Build Project
       run: |
         cd tp
-        ..\tp\qmake.exe ..\tp\testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+        qmake.exe testes_tp.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
         make
       
     - name: Install lcov
