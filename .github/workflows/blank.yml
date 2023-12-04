@@ -28,7 +28,7 @@ jobs:
     
     - name: Build Project
       run: |
-       tp/Makefile
+       tp/testes_tp.exe
       
     - name: Install lcov
       run: |
