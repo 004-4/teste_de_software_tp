@@ -28,8 +28,7 @@ jobs:
     
     - name: Build Project
       run: |
-        cd tp
-        Makefile
+       tp/Makefile
       
     - name: Install lcov
       run: |
