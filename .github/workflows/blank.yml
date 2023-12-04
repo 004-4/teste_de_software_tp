@@ -35,12 +35,6 @@ jobs:
         choco install lcov
       shell: powershell
 
-    - name: Generate coverage data
-      run: |
-        lcov --capture --directory . --output-file tp/coverage.txt
-        lcov --remove tp/coverage.txt '/usr/*' --output-file tp/coverage.txt
-        lcov --list tp/coverage.txt
-
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
