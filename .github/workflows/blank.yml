@@ -8,35 +8,25 @@ on:
       - main
 
 jobs:
-  test:
+ test:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Install Qt
-      uses: jurplel/install-qt-action@v3
+    - name: Set up Qt
+      uses: jurplel/setup-qt@v2
       with:
         qt-version: '6.6.0'
-        host: 'windows'     
-        
-    - name: Set up MinGW environment
-      run: |
-        cd tp
-        choco install mingw -y
+        platform: 'win64_mingw81'
     
-    - name: Build Project
+    - name: Run Tests
       run: |
-       tp/Makefile
-      
-    - name: Install lcov
-      run: |
-        choco install lcov
-      shell: powershell
+        tp/Makefile
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: tp/coverage.info
