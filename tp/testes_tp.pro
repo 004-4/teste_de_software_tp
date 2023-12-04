@@ -7,6 +7,9 @@ CONFIG += qt warn_on depend_includepath testcase c++17
 
 TEMPLATE = app
 
+QMAKE_CXXFLAGS += --coverage
+QMAKE_LFLAGS += --coverage
+
 SOURCES +=  tst_testes_de_unidade.cpp \
     adicionar_contato.cpp \
     atualizar_contato.cpp \
