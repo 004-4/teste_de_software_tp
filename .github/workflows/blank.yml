@@ -29,8 +29,7 @@ jobs:
     - name: Build Project
       run: |
         cd tp
-        qmake.exe testes_tp.pro -spec "CONFIG+=debug" "CONFIG+=qml_debug"
-        make
+        qmake.exe testes_tp.pro
       
     - name: Install lcov
       run: |
