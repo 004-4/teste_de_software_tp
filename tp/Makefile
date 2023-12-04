@@ -202,7 +202,7 @@ Makefile: testes_tp.pro mingw_64_/mkspecs/win32-g++/qmake.conf mingw_64_/feature
 		mingw_64_/lib/Qt6Sql.prl \
 		mingw_64_/lib/Qt6Core.prl \
 		mingw_64_/features/build_pass.prf
-	$(QMAKE) -o Makefile testes_tp.pro -spec win32-g++ 
+	$(QMAKE) -o Makefile testes_tp.pro -spec
 mingw_64_/features/spec_pre.prf:
 mingw_64_/features/device_config.prf:
 mingw_64_/common/sanitize.conf:
@@ -368,7 +368,7 @@ mingw_64_/lib/Qt6Sql.prl:
 mingw_64_/lib/Qt6Core.prl:
 mingw_64_/features/build_pass.prf:
 qmake: FORCE
-	@$(QMAKE) -o Makefile testes_tp.pro -spec win32-g++
+	@$(QMAKE) -o Makefile testes_tp.pro -spec
 
 qmake_all: FORCE
 
