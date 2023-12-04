@@ -26,9 +26,8 @@ jobs:
       run: |
         tp/Makefile
 
-    - name: Upload Test Results
-      uses: actions/upload-artifact@v2
+    - name: Upload to Codecov
+      uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: tp/coverage.info
-   
