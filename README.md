@@ -1,5 +1,7 @@
 # TP Teste de Software - app "aGENDA :)"
 
+* não fui capaz de implementar os testes e a cobertura com o GitHub Actions, as imagens "resultados dos testes.png" e "coverage.png" mostram os resultados e a cobertura respectivamente.
+
 ## Membros do grupo:
   Clara Costa da Fonseca
   2021031971
